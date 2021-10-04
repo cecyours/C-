@@ -12,7 +12,7 @@ public:
 	}
 };
 
-class Debug : public Code{
+class Debug : virtual public Code{
 
 public:
 	Debug()
@@ -21,7 +21,16 @@ public:
 	}
 };
 
-class Error : public Debug{
+class Release : virtual public Code
+{
+	public:
+	Release()
+	{
+		cout<<"we are in Release class\n";
+	}
+
+};
+class Error : public Debug, public Release{
 
 public:
 	Error()
